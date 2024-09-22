@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>  // For file operations
+
+using namespace std;
+
+int main() {
+    // Create an output file stream (ofstream) object
+    ofstream file;
+
+    // Open a file named "iman.txt" (this will create a new file if it doesn't exist)
+    file.open("iman.txt");
+
+    // Check if the file is opened successfully
+    if (file.is_open()) {
+        // Write text to the file
+        file << "Hello, this is a simple text written to the file.\n";
+        file << "C++ makes file handling easy!\n";
+
+        // Close the file after writing
+        file.close();
+
+        cout << "Text has been written to the file successfully.\n";
+    } else {
+        cout << "Error: Unable to open the file.\n";
+    }
+
+    return 0;
+}

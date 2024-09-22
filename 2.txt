@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>  // For file operations
+#include <string>   // For handling strings
+
+using namespace std;
+
+int main() {
+    // Create an input file stream (ifstream) object
+    ifstream file;
+    
+    // Open an existing file
+    file.open("iman.txt");
+
+    // Check if the file is opened successfully
+    if (file.is_open()) {
+        string line;
+
+        // Read the file line by line and display the contents
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+
+        // Close the file after reading
+        file.close();
+    } else {
+        // Error handling in case the file doesn't open
+        cout << "Unable to open the file. Please check if the file exists.\n";
+    }
+
+    return 0;
+}
